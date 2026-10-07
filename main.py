@@ -1,9 +1,10 @@
 import os
+import time
 import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 import yt_dlp
 
-TELEGRAM_TOKEN = "8928700628:AAG7JoOkvFwMt-mySizadjksydh7N4FoWT8".strip()
+TELEGRAM_TOKEN = "ВСТАВЬ_СЮДА_ТОКЕН_ТЕЛЕГРАМ".strip()
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 user_urls = {}
@@ -132,5 +133,13 @@ def process_download(call):
             message_id=call.message.message_id,
         )
 
-print("Бот-загрузчик запущен!")
-bot.polling(none_stop=True)
+if __name__ == "__main__":
+    print("Бот-загрузчик запущен!")
+    try:
+        bot.remove_webhook()
+    except Exception as e:
+        print(f"Предупреждение при удалении вебхука: {e}")
+    time.sleep(1)
+    bot.infinity_polling(timeout=20, long_polling_timeout=5)
+
+
