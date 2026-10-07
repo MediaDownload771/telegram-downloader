@@ -4,7 +4,7 @@ import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 import yt_dlp
 
-TELEGRAM_TOKEN = "ВСТАВЬ_СЮДА_ТОКЕН_ТЕЛЕГРАМ".strip()
+TELEGRAM_TOKEN = "8928700628:AAG7JoOkvFwMt-mySizadjksydh7N4FoWT8".strip()
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 user_urls = {}
